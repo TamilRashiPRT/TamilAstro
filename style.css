@@ -60,4 +60,39 @@ button {
     margin-top: 20px;
 }
 
+/* #myTable td:nth-child(2) {
+    text-align: center;
+  } */
+  #myTable td {
+    text-align: center;
+  }
 
+  .header-cell {
+    background-color: yellow; /* Blue color for header cells */
+    color: rgb(55, 50, 50); /* Text color for header cells */
+    text-align: center; /* Center align the text */
+  }
+  .data-cell {
+    background-color: #42f55a; /* Orange color for data cells */
+    text-align: center; /* Center align the text */
+  }
+  /* CSS to style the cells based on column index */
+.column-1 {
+    background-color: #4287f5; /* Blue color for column 1 */
+  }
+  
+.column-2 {
+    background-color: #baed95; /* Orange color for column 2 */
+  }
+.column-3 {
+    background-color: lightgoldenrodyellow; /* Orange color for column 2 */
+  }
+  #birthnum {
+    font-weight: bold;
+  }
+  #fatenum {
+    font-weight: bold;
+  }
+  #lifenum {
+    font-weight: bold;
+  }
