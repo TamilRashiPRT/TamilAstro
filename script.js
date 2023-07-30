@@ -216,12 +216,13 @@ function dateParser(number) {
     const year = dob.getFullYear(); // 2023
     const month = dob.getMonth() + 1; // January is 0, so we add 1 to get the actual month (7)
     const day = dob.getDate(); // 26
-    let syear = String(year);
-    let ryear= reverseString(syear);
-    let rmonth= reverseNumber(month);
-    let rday= reverseNumber(day);
+   // let syear = String(year);
+   // let ryear= reverseString(syear);
+   // let rmonth= reverseNumber(month);
+   // let rday= reverseNumber(day);
     
-    let rdob= String(ryear)+String(rmonth)+String(rday)+String(ryear)+String(rmonth)+String(rday);
+    //let rdob= String(ryear)+String(rmonth)+String(rday)+String(ryear)+String(rmonth)+String(rday);
+    let rdob= String(year)+String(month)+String(day)+String(year)+String(month)+String(day);
     const twoDArrayDOB = splitNumberIntoDigits(rdob);
     const predictions = [
         [1, 'Basic Finance'],
