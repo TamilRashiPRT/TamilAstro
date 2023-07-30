@@ -180,6 +180,10 @@ function dateParser(number) {
     return sum;
   }
 
+  function reverseString(str) {
+    return str.split("").reverse().join("");
+  }
+
   function reverseNumber(number) {
     // Convert the number to a string to manipulate its digits
     const numberString = String(number);
@@ -212,7 +216,8 @@ function dateParser(number) {
     const year = dob.getFullYear(); // 2023
     const month = dob.getMonth() + 1; // January is 0, so we add 1 to get the actual month (7)
     const day = dob.getDate(); // 26
-    let ryear= reverseNumber(year);
+    let syear = String(year);
+    let ryear= reverseString(syear);
     let rmonth= reverseNumber(month);
     let rday= reverseNumber(day);
     
