@@ -52,9 +52,13 @@ function humanLifeCalc() {
     resultElement1.innerHTML = `Birth Number ::${day} => ${sumOfDay}`;
 
     // Calculate Fate Number
-    const fateNumber = dateParser(day) + dateParser(month) + dateParser(year);
+    let fateNumber = dateParser(day) + dateParser(month) + dateParser(year);
+    let fateNumber1= fateNumber;
+    if (fateNumber1 >= 10) {
+        fateNumber1 = dateParser(fateNumber);
+    }
     const resultElement2 = document.getElementById('fatenum');
-    resultElement2.innerHTML = `Fate number :: ${fateNumber}`;
+    resultElement2.innerHTML = `Fate number :: ${fateNumber} => ${fateNumber1}`;
 
     // Calculate Life Number
     const fnumsum=dateParser(fateNumber)
