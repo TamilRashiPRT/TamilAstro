@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Prediction Calculation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Center-align the heading */
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Life Prediction Calculation</h1>
+        <form id="ageForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+            <br>
+            <button type="button" onclick="humanLifeCalc()">Life Prediction</button>
+        </form>
+        <div id="result"></div>
+        <hr/>
+        <div id="birthnum"></div>
+        <div id="fatenum"></div>
+        <div id="lifenum"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
