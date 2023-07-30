@@ -19,7 +19,25 @@ body {
     box-sizing: border-box; /* Include border and padding in the width and height */
     background-color: rgb(232, 233, 229); /* Optional: Set the background color of the div */
 }
-
+.res-div {
+    color: darkgreen; /* Optional: Set text color to white for better contrast */
+  }
+.red-div {
+    background-color: #ff0000;
+    color: black; /* Optional: Set text color to white for better contrast */
+  }
+.green-div {
+    background-color: forestgreen;
+    color: black /* Optional: Set text color to white for better contrast */
+  }
+.orange-div {
+    background-color: orange;
+    color: black; /* Optional: Set text color to white for better contrast */
+  }
+.foo-div {
+    background-color: grey;
+    color: yellow /* Optional: Set text color to white for better contrast */
+  }
 form {
     display: flex;
     flex-direction: column;
