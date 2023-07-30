@@ -10,8 +10,32 @@ function humanLifeCalc() {
     const year = dob.getFullYear(); // 2023
     const month = dob.getMonth() + 1; // January is 0, so we add 1 to get the actual month (7)
     const day = dob.getDate(); // 26
-
-
+    // const predictions = [
+    //     { id: 1, name: 'Basic Finance' },
+    //     { id: 2, name: 'Basic Sentiment' },
+    //     { id: 3, name: 'Basic Intelligent' },
+    //     { id: 4, name: 'Intermediate Finance' },
+    //     { id: 5, name: 'Intermediate Sentiment' },
+    //     { id: 6, name: 'Intermediate Intelligent' },
+    //     { id: 7, name: 'Extreme Finance' },
+    //     { id: 8, name: 'Extreme Sentiment' },
+    //     { id: 9, name: 'Extreme Intelligent' },
+    //     { id: 0, name: 'Superb Intelligent' }
+    //   ];
+    
+    const predictions = [
+        [1, 'Basic Finance'],
+        [2, 'Basic Sentiment' ],
+        [3, 'Basic Intelligent' ],
+        [4, 'Intermediate Finance' ],
+        [5, 'Intermediate Sentiment' ],
+        [6, 'Intermediate Intelligent' ],
+        [7, 'Extreme Finance' ],
+        [8, 'Extreme Sentiment' ],
+        [9, 'Extreme Intelligent' ],
+        [0, 'Superb Intelligent' ]
+      ];
+    
     // Display the Current Age
     const age = calcAge(dob);
     const resultElement = document.getElementById('result');
@@ -20,9 +44,12 @@ function humanLifeCalc() {
 
 
     // Calculate Birth Number
-    const sumOfDay = dateParser(day);
+    let sumOfDay = dateParser(day);
+    if (sumOfDay >= 10) {
+        sumOfDay = dateParser(sumOfDay);
+    }
     const resultElement1 = document.getElementById('birthnum');
-    resultElement1.innerHTML = `Birth Number :: ${sumOfDay}`;
+    resultElement1.innerHTML = `Birth Number ::${day} => ${sumOfDay}`;
 
     // Calculate Fate Number
     const fateNumber = dateParser(day) + dateParser(month) + dateParser(year);
@@ -33,7 +60,8 @@ function humanLifeCalc() {
     const fnumsum=dateParser(fateNumber)
     const lifenum= lifeNUmPrediction(fnumsum, sumOfDay);
     const resultElement3 = document.getElementById('lifenum');
-    resultElement3.innerHTML = `Life number :: ${lifenum}`;
+   // const value = findValueBasedOnCondition(myMap, (key, value) => key === lifenum);
+    resultElement3.innerHTML = `Life number :: ${lifenum} `;
 }
 
 function dateParser(number) {
@@ -91,4 +119,11 @@ function dateParser(number) {
   }
  
 
-  
+  function findValueBasedOnCondition(map, conditionFunction) {
+    for (const [key, value] of map.entries()) {
+      if (conditionFunction(key, value)) {
+        return value;
+      }
+    }
+    return undefined; // Return undefined if no matching value is found
+  }
