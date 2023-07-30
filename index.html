@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Prediction Calculation</title>
+    <title>Life Prediction Calculator</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Center-align the heading */
@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Life Prediction Calculation</h1>
+        <h1>Life Prediction Calculator</h1>
         <form id="ageForm">
             <label for="name">Name:</label>
             <input type="text" id="name" required>
@@ -33,9 +33,25 @@
         <div class="green-div" id="lifenum"></div>
         <br>
         <br>
+         <form id="predictionForm">
+            <button type="button" onclick="humanLifePredictionCalc()">Yearly Prediction</button>
+            <table id="myTable">
+        <thead>
+            <tr>
+                <th class="header-cell">Life expectation</th>
+                <th class="header-cell">Age Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+        </table>
+
+        </form>
+   
     <hr/>   
      <div class="foo-div" >
-     <p>Authors :: Senthilkumar Acharya & Tamilanban R. For astro related free trainings contact 72000 44010 </p>
+     <p>Authors :: Senthilkumar Acharya & Tamilanban. For astro related free trainings contact 72000 44010 </p>
     </div>
     </div>
     <script src="script.js"></script>
