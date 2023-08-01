@@ -305,3 +305,148 @@ function dateParser(number) {
  
 
 }
+
+function populateTableInPopup() {
+    const popupTable = document.getElementById("popupTable");
+  
+    // Clear existing rows (except the first row, which is the header)
+    while (popupTable.rows.length > 1) {
+      popupTable.deleteRow(1);
+    }
+  
+    const dob = new Date(document.getElementById('dob').value);
+    const age = calcAge(dob);
+    const year = dob.getFullYear(); // 2023
+    const month = dob.getMonth() + 1; // January is 0, so we add 1 to get the actual month (7)
+    const day = dob.getDate(); // 26
+ 
+    let rdob= String(year)+String(month)+String(day)+String(year)+String(month)+String(day);
+    const twoDArrayDOB = splitNumberIntoDigits(rdob);
+    const data = [
+        ["1"],
+        ["2"],
+        ["3"],
+        ["4"],
+        ["5"],
+        ["6"],
+        ["7"],
+        ["8"],
+        ["9"],
+        ["10"]
+      ];
+
+      let currentAge = age.years;
+      let ageRange = [];
+      if (currentAge >= 0 && currentAge <= 10) {
+        ageRange = generateStringArray(1,10);
+      } else if (currentAge >= 11 && currentAge <= 20) {
+        ageRange = generateStringArray(11,20);
+      } else if (currentAge >= 21 && currentAge <= 30) {
+        ageRange = generateStringArray(21,30);
+      } else if (currentAge >= 31 && currentAge <= 40) {
+        ageRange = generateStringArray(31,40);
+      } else if (currentAge >= 41 && currentAge <= 50) {
+        ageRange = generateStringArray(41,50);
+     } else if (currentAge >= 51 && currentAge <= 60) {
+        ageRange = generateStringArray(51,60);
+      } else if (currentAge >= 61 && currentAge <= 70) {
+        ageRange = generateStringArray(61,70);
+      } else if (currentAge >= 71 && currentAge <= 80) {
+        ageRange = generateStringArray(71,80);
+      } else if (currentAge >= 81 && currentAge <= 90) {
+        ageRange = generateStringArray(81,90);
+     } else if (currentAge >= 91 && currentAge <= 100) {
+        ageRange = generateStringArray(91,100);
+      } else if (currentAge >= 101 && currentAge <= 110) {
+        ageRange = generateStringArray(101,110);
+      } else if (currentAge >= 111 && currentAge <= 120) {
+        ageRange = generateStringArray(111,120);
+      } else if (currentAge >= 121 && currentAge <= 130) {
+        ageRange = generateStringArray(121,130);
+      } else {
+        console.log("Value is outside all specified ranges.");
+      }
+
+    const lifePredictions = {};
+    lifePredictions["0"] = "Superb Intelligent";
+    lifePredictions["1"] = "Basic Finance";
+    lifePredictions["2"] = "Basic Sentiment";
+    lifePredictions["3"] = "Basic Intelligent";
+    lifePredictions["4"] = "Intermediate Finance";
+    lifePredictions["5"] = "Intermediate Sentiment";
+    lifePredictions["6"] = "Intermediate Intelligent";
+    lifePredictions["7"] = "Extreme Finance";
+    lifePredictions["8"] = "Extreme Sentiment";
+    lifePredictions["9"] = "Extreme Intelligent";
+    //   for (let i = 0; i < data.length; i++) {
+    //    // const row = document.createElement("tr");
+    //     const row = popupTable.insertRow();
+    //     const cell1 = row.insertCell();
+    //     cell1.textContent = twoDArrayDOB[i];
+    //     // Add a class to the cell based on the column index
+    //     cell1.classList.add(`column-2`);
+    //     row.appendChild(cell1);
+    
+    //     const cell2 = row.insertCell();
+    //     cell2.textContent = data[i];
+    //     cell2.classList.add(`column-3`);
+    //     row.appendChild(cell2);
+    
+    //     tableBody.appendChild(row);
+    //   }
+
+    for (let i = 0; i < ageRange.length; i++) {
+          const row = popupTable.insertRow();
+          const nameCell = row.insertCell();
+          const ageCell = row.insertCell();
+          const lifeCell = row.insertCell();
+          nameCell.textContent = twoDArrayDOB[i];
+          ageCell.textContent = ageRange[i];
+          lifeCell.textContent = lifePredictions[twoDArrayDOB[i]];
+          nameCell.classList.add(`column-2`);
+          ageCell.classList.add(`column-3`);
+         lifeCell.classList.add(`column-2`);
+      }
+    //   for (let i = 0; i < names.length; i++) {
+    //     if (ages[i] > condition) {
+    //       const row = popupTable.insertRow();
+    //       const nameCell = row.insertCell();
+    //       const ageCell = row.insertCell();
+    //       const countryCell = row.insertCell();
+    //       nameCell.textContent = names[i];
+    //       ageCell.textContent = ages[i];
+    //       countryCell.textContent = countries[i];
+    //     }
+    //   }
+
+    //Loop through the dynamic data to populate the table
+    // dynamicData.forEach((rowData) => {
+    //   const row = popupTable.insertRow();
+    //   rowData.forEach((cellData) => {
+    //     const cell = row.insertCell();
+    //     cell.textContent = cellData;
+    //   });
+    // });
+
+  }
+  
+  // Open the popup when the "Open Popup" link is clicked
+  document.getElementById("openPopup").addEventListener("click", function() {
+    const popup = document.getElementById("myPopup");
+    popup.style.display = "block";
+    populateTableInPopup();
+  });
+  
+  // Close the popup when the "Close" link inside the popup is clicked
+  document.getElementById("closePopup").addEventListener("click", function() {
+    const popup = document.getElementById("myPopup");
+    popup.style.display = "none";
+  });
+
+  function generateStringArray(start, end) {
+    const stringArray = [];
+    for (let i = start; i <= end; i++) {
+      stringArray.push(String(i));
+    }
+    return stringArray;
+  }
