@@ -12,6 +12,9 @@
         h1 {
             text-align: center;
         }
+        h2 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +49,26 @@
             <!-- Table rows will be dynamically added here -->
         </tbody>
         </table>
-
+        
+    <a href="#" id="openPopup">Prediction about current decade</a>
+    <!-- The popup container -->
+    <div class="popup" id="myPopup">
+        <h2> Age Wise Prediction</h2>
+        <table id="popupTable">
+            <!-- Table body will be populated dynamically -->
+             <thead>
+            <tr>
+                <th class="header-cell">Life Path</th>
+                <th class="header-cell">Age</th>
+                <th class="header-cell">Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+        </table>
+        <a href="#" id="closePopup">Close</a>
+    </div>
         </form>
    
     <hr/>   
